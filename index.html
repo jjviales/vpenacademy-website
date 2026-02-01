@@ -88,30 +88,29 @@
     .logo {
       display: flex;
       align-items: center;
-      gap: 15px; /* Espacio entre el círculo y el texto */
+      gap: 15px;
       text-decoration: none;
       color: var(--navy-dark);
     }
 
-    /* NUEVO: Contenedor circular dorado para el Logo */
     .logo-circle {
       width: 70px;
       height: 70px;
-      border: 3px solid var(--gold-main); /* Borde Dorado */
-      border-radius: 50%; /* Lo hace redondo */
+      border: 3px solid var(--gold-main);
+      border-radius: 50%;
       overflow: hidden;
       display: flex;
       align-items: center;
       justify-content: center;
       background-color: white;
-      padding: 3px; /* Pequeño espacio interno */
+      padding: 3px;
       box-shadow: 0 4px 6px rgba(0,0,0,0.1);
     }
 
     .logo-circle img {
       width: 100%;
       height: 100%;
-      object-fit: contain; /* Ajusta la imagen dentro del círculo */
+      object-fit: contain;
       border-radius: 50%;
     }
 
@@ -154,7 +153,7 @@
       text-align: center;
       color: var(--white);
       padding: 0 20px;
-      margin-top: 80px; /* Ajuste por la altura del header */
+      margin-top: 80px;
       position: relative;
     }
 
@@ -222,8 +221,113 @@
       font-size: 1rem;
     }
 
+    /* --- ESTILOS SECCIÓN TEST --- */
+    .level-test-section {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy-light) 100%);
+      padding: 80px 20px;
+      color: var(--white);
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+    }
+
+    .test-container {
+      max-width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .test-content { flex: 2; text-align: left; }
+
+    .test-content h2 {
+      font-size: 2.2rem;
+      color: var(--gold-main);
+      margin-bottom: 20px;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .test-content p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+      line-height: 1.8;
+      opacity: 0.9;
+    }
+
+    .test-note {
+      font-size: 0.9rem !important;
+      margin-top: 15px;
+      font-style: italic;
+      color: #ccc;
+    }
+
+    .test-image {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    /* --- ESTILOS ZONA DE DESCARGA (NUEVO) --- */
+    .downloads {
+      padding: 80px 20px;
+      background-color: var(--white);
+      text-align: center;
+    }
+
+    .download-card {
+      background: var(--white);
+      border: 1px solid #e1e1e1;
+      border-radius: 15px;
+      padding: 30px;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .download-card:hover {
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      transform: translateY(-5px);
+      border-color: var(--gold-main);
+    }
+
+    .download-icon {
+      font-size: 3rem;
+      color: #e74c3c; /* Color rojo PDF */
+      margin-bottom: 20px;
+    }
+
+    .download-card h3 {
+      color: var(--navy-dark);
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+      font-weight: 700;
+    }
+
+    .download-btn {
+      display: inline-block;
+      padding: 8px 20px;
+      border: 1px solid var(--navy-dark);
+      color: var(--navy-dark);
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      transition: all 0.3s;
+    }
+
+    .download-btn:hover {
+      background: var(--navy-dark);
+      color: var(--white);
+    }
+
     /* --- MODALIDADES --- */
-    .modalities {
+    .modalities { 
       padding: 80px 20px;
       background-color: var(--gray-light);
       text-align: center;
@@ -233,10 +337,18 @@
       color: var(--navy-dark);
       font-size: 2.2rem;
       font-weight: 800;
-      margin-bottom: 50px;
+      margin-bottom: 15px;
       text-transform: uppercase;
       position: relative;
       display: inline-block;
+    }
+
+    .section-subtitle {
+      margin-bottom: 50px;
+      color: #666;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
     }
     
     .section-title::after {
@@ -323,7 +435,6 @@
       border: 0;
     }
     
-    /* Botón flotante sobre el mapa para móviles (opcional) */
     .map-btn-overlay {
         position: absolute;
         bottom: 20px;
@@ -337,7 +448,7 @@
         font-weight: bold;
         color: var(--navy-dark);
         text-decoration: none;
-        display: none; /* Se muestra con JS o CSS si se desea */
+        display: none;
     }
 
     /* --- FOOTER --- */
@@ -387,7 +498,7 @@
       .nav-menu {
         display: none;
         position: absolute;
-        top: 80px; /* Ajustado a la altura del header */
+        top: 80px;
         left: 0;
         width: 100%;
         background: var(--white);
@@ -399,6 +510,12 @@
       .hamburger { display: block; }
       .contact-section { flex-direction: column; }
       .map-container { height: 350px; }
+      
+      /* Ajustes para el Test */
+      .test-container { flex-direction: column; text-align: center; }
+      .test-content { text-align: center; }
+      .test-image { display: none; }
+      .test-content h2 { font-size: 1.8rem; }
     }
   </style>
 </head>
@@ -419,6 +536,7 @@
 
       <nav class="nav-menu" id="navMenu">
         <a href="#" class="nav-link">Inicio</a>
+        <a href="#descargas" class="nav-link">Recursos</a>
         <a href="#modalidades" class="nav-link">Cursos</a>
         <a href="#contacto" class="nav-link">Contacto</a>
         <a href="https://wa.me/50578642792" class="btn btn-gold">Inscríbete Ahora</a>
@@ -462,6 +580,59 @@
         <h3>Título al Finalizar</h3>
         <p>Certificación oficial al completar los 12 niveles.</p>
       </div>
+    </div>
+  </section>
+
+  <section class="level-test-section">
+    <div class="test-container">
+      <div class="test-content">
+        <h2>¿No sabes cuál es tu nivel?</h2>
+        <p>Descúbrelo gratis en 15 minutos con el test estandarizado de <strong>EF SET</strong>. Obtén tu resultado preliminar y contáctanos para ubicarte en el curso correcto.</p>
+        
+        <a href="https://www.efset.org/es/quick-check/" target="_blank" class="btn btn-gold">
+          <i class="fas fa-check-circle" style="margin-right: 10px;"></i> Hacer Test Gratis
+        </a>
+        
+        <p class="test-note">*Al finalizar, envíanos una captura de tu resultado por WhatsApp.</p>
+      </div>
+      <div class="test-image">
+        <i class="fas fa-certificate" style="font-size: 10rem; color: rgba(255,255,255,0.1);"></i>
+      </div>
+    </div>
+  </section>
+
+  <section id="descargas" class="downloads">
+    <h2 class="section-title">Zona de Descargas</h2>
+    <p class="section-subtitle">Material de apoyo oficial de V&P English Academy.</p>
+    
+    <div class="features-grid"> <div class="download-card">
+        <i class="fas fa-file-pdf download-icon"></i>
+        <h3>Lista de Verbos (Nivel 1)</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">Verbos esenciales para principiantes.</p>
+        <a href="Lists of Verbs 1st Level.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
+      </div>
+
+      <div class="download-card">
+        <i class="fas fa-file-pdf download-icon"></i>
+        <h3>Fonética Inglesa</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">Aprende a pronunciar inglés correctamente desde cero bien.!!</p>
+        <a href="fonética inglesa_curso completo.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
+      </div>
+
+      <div class="download-card">
+        <i class="fas fa-file-pdf download-icon"></i>
+        <h3>Collins Cobuild English Grammar</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">Gramática completa en inglés para dominar reglas y uso clave.</p>
+        <a href="Collins Cobuild English Grammar.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
+      </div>
+
+      <div class="download-card">
+        <i class="fas fa-book download-icon" style="color: var(--navy-dark);"></i>
+        <h3>Inglés Básico</h3>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">Guía esencial de inglés para principiantes paso a paso fácil.</p>
+        <a href="Inglés Básico.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
+      </div>
+
     </div>
   </section>
 
@@ -528,10 +699,10 @@
     </div>
     
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.666484651262!2d-85.8281827262942!3d11.43173554676743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f744fc4bb448af7%3A0xb48ee21257995fb2!2sV%26P%20English%20Academy!5e0!3m2!1ses-419!2sni!4v1769927519572!5m2!1ses-419!2sni" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa V&P English Academy"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15655.201402280265!2d-85.83648604999999!3d11.43859605!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f7405908b982121%3A0xc669f41757827e8d!2sRivas!5e0!3m2!1ses-419!2sni!4v1706646543123!5m2!1ses-419!2sni" style="border:0;" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Mapa V&P English Academy"></iframe>
       
       <div style="position: absolute; bottom: 20px; right: 20px;">
-          <a href="https://maps.app.goo.gl/vRz2cmFgyfMFAMJn7" target="_blank" class="btn btn-gold" style="box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+          <a href="https://maps.app.goo.gl/3" target="_blank" class="btn btn-gold" style="box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
               <i class="fas fa-map-marked-alt"></i> Ver Ubicación Exacta
           </a>
       </div>
