@@ -29,6 +29,7 @@
       color: var(--text-dark);
       line-height: 1.6;
       overflow-x: hidden;
+      scroll-behavior: smooth;
     }
 
     /* --- ESTILOS DE BOTONES --- */
@@ -143,7 +144,7 @@
     /* --- HERO SECTION --- */
     .hero {
       background: linear-gradient(rgba(10, 31, 68, 0.9), rgba(10, 31, 68, 0.7)), 
-                  url('mi_carpeta/IMG_9804.jpg');
+                  url('mi_carpeta/IMG_9804.jpg'); /* RECUERDA: Ajusta esto si tu imagen está en otra carpeta */
       background-size: cover;
       background-position: center;
       height: 90vh;
@@ -273,7 +274,7 @@
       align-items: center;
     }
 
-    /* --- ESTILOS ZONA DE DESCARGA (NUEVO) --- */
+    /* --- ESTILOS ZONA DE DESCARGA --- */
     .downloads {
       padding: 80px 20px;
       background-color: var(--white);
@@ -298,7 +299,7 @@
 
     .download-icon {
       font-size: 3rem;
-      color: #e74c3c; /* Color rojo PDF */
+      color: #e74c3c;
       margin-bottom: 20px;
     }
 
@@ -399,6 +400,82 @@
     .modality-card ul { list-style: none; text-align: left; padding-left: 10px; margin-bottom: 20px; }
     .modality-card li { margin-bottom: 8px; font-size: 0.95rem; color: #555; }
     .modality-card li i { color: var(--gold-main); margin-right: 8px; }
+
+    /* --- ESTILOS FORMULARIO PRE-MATRÍCULA --- */
+    .enrollment-section {
+      background: linear-gradient(rgba(10, 31, 68, 0.95), rgba(10, 31, 68, 0.9));
+      background-size: cover;
+      background-position: center;
+      padding: 80px 20px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .enrollment-container {
+      background: rgba(255, 255, 255, 0.05);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      border: 1px solid rgba(249, 201, 78, 0.3);
+      max-width: 600px;
+      width: 100%;
+      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+    }
+
+    .enrollment-header { text-align: center; margin-bottom: 30px; }
+
+    .enrollment-form label {
+      display: block;
+      color: var(--gold-main);
+      margin-bottom: 8px;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+
+    .enrollment-form input, 
+    .enrollment-form select {
+      width: 100%;
+      padding: 12px 15px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 8px;
+      color: white;
+      font-size: 1rem;
+      outline: none;
+      transition: border 0.3s;
+    }
+
+    .enrollment-form input:focus, 
+    .enrollment-form select:focus {
+      border-color: var(--gold-main);
+      background: rgba(255, 255, 255, 0.15);
+    }
+
+    .enrollment-form select option {
+      background: var(--navy-dark);
+      color: white;
+    }
+
+    .form-group { margin-bottom: 20px; }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .btn-block {
+      width: 100%;
+      padding: 15px;
+      font-size: 1.1rem;
+      text-transform: uppercase;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 480px) {
+      .enrollment-container { padding: 25px; }
+      .form-row { grid-template-columns: 1fr; gap: 0; }
+    }
 
     /* --- CONTACTO Y MAPA --- */
     .contact-section {
@@ -511,7 +588,6 @@
       .contact-section { flex-direction: column; }
       .map-container { height: 350px; }
       
-      /* Ajustes para el Test */
       .test-container { flex-direction: column; text-align: center; }
       .test-content { text-align: center; }
       .test-image { display: none; }
@@ -538,8 +614,9 @@
         <a href="#" class="nav-link">Inicio</a>
         <a href="#descargas" class="nav-link">Recursos</a>
         <a href="#modalidades" class="nav-link">Cursos</a>
+        <a href="#prematricula" class="nav-link">Pre-Matrícula</a>
         <a href="#contacto" class="nav-link">Contacto</a>
-        <a href="https://wa.me/50578642792" class="btn btn-gold">Inscríbete Ahora</a>
+        <a href="#prematricula" class="btn btn-gold">Inscríbete Ahora</a>
       </nav>
     </div>
   </header>
@@ -605,17 +682,18 @@
     <h2 class="section-title">Zona de Descargas</h2>
     <p class="section-subtitle">Material de apoyo oficial de V&P English Academy.</p>
     
-    <div class="features-grid"> <div class="download-card">
+    <div class="features-grid"> 
+      <div class="download-card">
         <i class="fas fa-file-pdf download-icon"></i>
         <h3>Lista de Verbos 1 </h3>
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Verbos claves del inglés explicados para usar con ejemplos.!</p>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">Verbos claves del inglés explicados para usar con ejemplos.</p>
         <a href="Lists of Verbs 1st Level.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
       </div>
 
       <div class="download-card">
         <i class="fas fa-file-pdf download-icon"></i>
         <h3>Fonética Inglesa</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Aprende a pronunciar inglés correctamente desde cero bien.!!</p>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">Aprende a pronunciar inglés correctamente desde cero.</p>
         <a href="fonética inglesa_curso completo.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
       </div>
 
@@ -629,10 +707,9 @@
       <div class="download-card">
         <i class="fas fa-book download-icon" style="color: var(--navy-dark);"></i>
         <h3>Inglés Básico</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Guía esencial de inglés para principiantes paso a paso fácil.</p>
+        <p style="font-size: 0.9rem; margin-bottom: 15px;">Guía esencial de inglés para principiantes paso a paso.</p>
         <a href="Inglés Básico.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
       </div>
-
     </div>
   </section>
 
@@ -672,6 +749,65 @@
         <a href="https://wa.me/50578642792?text=Info%20Privada" class="btn btn-outline">Más Información</a>
       </div>
 
+    </div>
+  </section>
+
+  <section id="prematricula" class="enrollment-section">
+    <div class="enrollment-container">
+      <div class="enrollment-header">
+        <h2 class="section-title" style="color: var(--gold-main); display: block;">Pre-Matrícula Online</h2>
+        <p style="color: #ccc;">Completa tus datos para reservar tu cupo y te contactaremos para confirmar.</p>
+      </div>
+
+      <form id="enrollmentForm" class="enrollment-form" onsubmit="enviarAlWhatsapp(event)">
+        
+        <div class="form-group">
+          <label for="nombre">Nombre Completo:</label>
+          <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label for="edad">Edad:</label>
+            <input type="number" id="edad" required placeholder="Ej: 18">
+          </div>
+          <div class="form-group">
+            <label for="telefono">Teléfono / WhatsApp:</label>
+            <input type="tel" id="telefono" required placeholder="Ej: 8888 8888">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="modalidad">Modalidad de Interés:</label>
+          <div class="select-wrapper">
+            <select id="modalidad" required>
+              <option value="" disabled selected>Selecciona una opción...</option>
+              <option value="Niños (Presencial)">Cursos para Niños (Presencial)</option>
+              <option value="Adolescentes (Presencial)">Adolescentes (Presencial)</option>
+              <option value="Adultos (Presencial)">Adultos (Presencial)</option>
+              <option value="Virtual (Adultos)">Virtual (Lunes y Viernes)</option>
+              <option value="Privado">Clases Privadas</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="nivel">¿Cuál crees que es tu nivel actual?</label>
+          <div class="select-wrapper">
+            <select id="nivel" required>
+              <option value="Desde Cero">Básico (Desde Cero)</option>
+              <option value="Intermedio">Intermedio (Ya sé algo)</option>
+              <option value="Avanzado">Avanzado (Quiero perfeccionar)</option>
+              <option value="No sé">No estoy seguro (Necesito Test)</option>
+            </select>
+          </div>
+        </div>
+
+        <button type="submit" class="btn btn-gold btn-block">
+          Enviar Solicitud <i class="fab fa-whatsapp" style="margin-left: 10px;"></i>
+        </button>
+
+      </form>
     </div>
   </section>
 
@@ -744,6 +880,34 @@
         document.getElementById("navMenu").classList.remove("active");
       });
     });
+
+    // Función para enviar pre-matrícula al WhatsApp (CORREGIDA)
+    function enviarAlWhatsapp(e) {
+      e.preventDefault();
+
+      var nombre = document.getElementById('nombre').value;
+      var edad = document.getElementById('edad').value;
+      var telefono = document.getElementById('telefono').value;
+      var modalidad = document.getElementById('modalidad').value;
+      var nivel = document.getElementById('nivel').value;
+      
+      var telefonoAcademia = "50578642792"; 
+
+      // Mensaje estructurado con saltos de línea \n
+      var texto = "👋 Hola V&P, quiero realizar mi PRE-MATRÍCULA.\n\n" +
+                  "👤 Nombre: " + nombre + "\n" +
+                  "🎂 Edad: " + edad + " años\n" +
+                  "📱 Teléfono: " + telefono + "\n" +
+                  "🎓 Modalidad: " + modalidad + "\n" +
+                  "📊 Nivel estimado: " + nivel + "\n\n" +
+                  "Espero su confirmación.";
+
+      // encodeURIComponent es CLAVE para que no se corte el mensaje en el símbolo '&'
+      var mensajeCodificado = encodeURIComponent(texto);
+
+      var url = "https://api.whatsapp.com/send?phone=" + telefonoAcademia + "&text=" + mensajeCodificado;
+      window.open(url, '_blank');
+    }
   </script>
 
 </body>
