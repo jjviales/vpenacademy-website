@@ -22,6 +22,10 @@
       --text-dark: #333333;
     }
 
+    .highlight-gold {
+      color: var(--gold-main);
+    }
+
     * { margin: 0; padding: 0; box-sizing: border-box; }
     
     body {
@@ -274,6 +278,10 @@
       justify-content: center;
       align-items: center;
     }
+    .test-certificate-icon {
+      font-size: 10rem;
+      color: rgba(255,255,255,0.1);
+    }
 
     /* --- ESTILOS ZONA DE DESCARGA --- */
     .downloads {
@@ -303,6 +311,9 @@
       color: #e74c3c;
       margin-bottom: 20px;
     }
+    .download-icon-navy {
+      color: var(--navy-dark);
+    }
 
     .download-card h3 {
       color: var(--navy-dark);
@@ -326,6 +337,11 @@
     .download-btn:hover {
       background: var(--navy-dark);
       color: var(--white);
+    }
+
+    .download-desc {
+      font-size: 0.9rem;
+      margin-bottom: 15px;
     }
 
     /* --- MODALIDADES --- */
@@ -414,6 +430,7 @@
 
     .enrollment-container {
       background: rgba(255, 255, 255, 0.05);
+      -webkit-backdrop-filter: blur(10px);
       backdrop-filter: blur(10px);
       padding: 40px;
       border-radius: 20px;
@@ -510,6 +527,8 @@
     .map-container iframe {
       width: 100%;
       height: 100%;
+    }
+    .map-iframe {
       border: 0;
     }
     
@@ -527,6 +546,14 @@
         color: var(--navy-dark);
         text-decoration: none;
         display: none;
+    }
+    .map-btn-absolute {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+    }
+    .map-btn-shadow {
+        box-shadow: 0 4px 15px rgba(0,0,0,0.3);
     }
 
     /* --- FOOTER --- */
@@ -570,6 +597,10 @@
       color: #aaa;
     }
 
+    .social-icons-margin-top {
+      margin-top: 20px;
+    }
+
     /* RESPONSIVE */
     @media (max-width: 768px) {
       .hero h1 { font-size: 2rem; }
@@ -593,6 +624,24 @@
       .test-content { text-align: center; }
       .test-image { display: none; }
       .test-content h2 { font-size: 1.8rem; }
+    }
+
+    .prematricula-title {
+      color: var(--gold-main);
+      display: block;
+    }
+    .whatsapp-icon-margin {
+      margin-left: 10px;
+    }
+    .enrollment-description {
+      color: #ccc;
+    }
+    .contact-btn-container {
+      margin-top: 30px;
+    }
+    .contact-description {
+      margin-bottom: 30px;
+      font-size: 1.1rem;
     }
   </style>
 </head>
@@ -624,7 +673,7 @@
 
   <section class="hero">
     <div class="hero-content">
-      <h1>Curso de Inglés para<br><span style="color: var(--gold-main);">Adultos, Niños y Adolescentes</span></h1>
+      <h1>Curso de Inglés para<br><span class="highlight-gold">Adultos, Niños y Adolescentes</span></h1>
       <p>Invierte en tu futuro con profesores certificados y un método práctico en Rivas.</p>
       <a href="#modalidades" class="btn btn-gold">Ver Modalidades</a>
     </div>
@@ -667,14 +716,14 @@
         <h2>¿No sabes cuál es tu nivel?</h2>
         <p>Descúbrelo gratis en 15 minutos con el test estandarizado de <strong>EF SET</strong>. Obtén tu resultado preliminar y contáctanos para ubicarte en el curso correcto.</p>
         
-        <a href="https://www.efset.org/es/quick-check/" target="_blank" class="btn btn-gold">
-          <i class="fas fa-check-circle" style="margin-right: 10px;"></i> Hacer Test Gratis
+        <a href="https://www.efset.org/es/quick-check/" target="_blank" rel="noopener" class="btn btn-gold">
+          <i class="fas fa-check-circle icon-margin-right"></i> Hacer Test Gratis
         </a>
         
         <p class="test-note">*Al finalizar, envíanos una captura de tu resultado por WhatsApp.</p>
       </div>
       <div class="test-image">
-        <i class="fas fa-certificate" style="font-size: 10rem; color: rgba(255,255,255,0.1);"></i>
+        <i class="fas fa-certificate test-certificate-icon"></i>
       </div>
     </div>
   </section>
@@ -687,28 +736,28 @@
       <div class="download-card">
         <i class="fas fa-file-pdf download-icon"></i>
         <h3>Lista de Verbos 1 </h3>
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Verbos claves del inglés explicados para usar con ejemplos.</p>
+        <p class="download-desc">Verbos claves del inglés explicados para usar con ejemplos.</p>
         <a href="Lists of Verbs 1st Level.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
       </div>
 
       <div class="download-card">
         <i class="fas fa-file-pdf download-icon"></i>
         <h3>Fonética Inglesa</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Aprende a pronunciar inglés correctamente desde cero.</p>
+        <p class="download-desc">Aprende a pronunciar inglés correctamente desde cero.</p>
         <a href="fonética inglesa_curso completo.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
       </div>
 
       <div class="download-card">
         <i class="fas fa-file-pdf download-icon"></i>
         <h3>English Grammar</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Gramática completa en inglés para dominar reglas y uso clave.</p>
+        <p class="download-desc">Gramática completa en inglés para dominar reglas y uso clave.</p>
         <a href="Collins Cobuild English Grammar.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
       </div>
 
       <div class="download-card">
-        <i class="fas fa-book download-icon" style="color: var(--navy-dark);"></i>
+        <i class="fas fa-book download-icon download-icon-navy"></i>
         <h3>Inglés Básico</h3>
-        <p style="font-size: 0.9rem; margin-bottom: 15px;">Guía esencial de inglés para principiantes paso a paso.</p>
+        <p class="download-desc">Guía esencial de inglés para principiantes paso a paso.</p>
         <a href="Inglés Básico.pdf" class="download-btn">Descargar PDF <i class="fas fa-download"></i></a>
       </div>
     </div>
@@ -756,8 +805,8 @@
   <section id="prematricula" class="enrollment-section">
     <div class="enrollment-container">
       <div class="enrollment-header">
-        <h2 class="section-title" style="color: var(--gold-main); display: block;">Pre-Matrícula Online</h2>
-        <p style="color: #ccc;">Completa tus datos para reservar tu cupo y te contactaremos para confirmar.</p>
+        <h2 class="section-title prematricula-title">Pre-Matrícula Online</h2>
+        <p class="enrollment-description">Completa tus datos para reservar tu cupo y te contactaremos para confirmar.</p>
       </div>
 
       <form id="enrollmentForm" class="enrollment-form" onsubmit="enviarAlWhatsapp(event)">
@@ -765,6 +814,11 @@
         <div class="form-group">
           <label for="nombre">Nombre Completo:</label>
           <input type="text" id="nombre" required placeholder="Ej: Juan Pérez">
+        </div>
+
+        <div class="form-group">
+          <label for="email">Correo Electrónico:</label>
+          <input type="email" id="email" required placeholder="Ej: juan@gmail.com">
         </div>
 
         <div class="form-row">
@@ -805,7 +859,7 @@
         </div>
 
         <button type="submit" class="btn btn-gold btn-block">
-          Enviar Solicitud <i class="fab fa-whatsapp" style="margin-left: 10px;"></i>
+          Enviar Solicitud <i class="fab fa-whatsapp whatsapp-icon-margin"></i>
         </button>
 
       </form>
@@ -815,7 +869,7 @@
   <section id="contacto" class="contact-section">
     <div class="contact-info">
       <h2>Escríbenos Hoy</h2>
-      <p style="margin-bottom: 30px; font-size: 1.1rem;">Asegura tu cupo y comienza a aprender inglés con el mejor método.</p>
+      <p class="contact-description">Asegura tu cupo y comienza a aprender inglés con el mejor método.</p>
       
       <div class="contact-item">
         <i class="fab fa-whatsapp"></i>
@@ -830,16 +884,16 @@
         <span>De Esc. Eloy Canales 2.5 C. E., Rivas, Nic.</span>
       </div>
 
-      <div style="margin-top: 30px;">
+      <div class="contact-btn-container">
          <a href="https://wa.me/50578642792" class="btn btn-gold">Contactar por WhatsApp</a>
       </div>
     </div>
     
     <div class="map-container">
-      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.666484651262!2d-85.8281827262942!3d11.43173554676743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f744fc4bb448af7%3A0xb48ee21257995fb2!2sV%26P%20English%20Academy!5e0!3m2!1ses-419!2sni!4v1769934681165!5m2!1ses-419!2sni" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+      <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3910.666484651262!2d-85.8281827262942!3d11.43173554676743!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8f744fc4bb448af7%3A0xb48ee21257995fb2!2sV%26P%20English%20Academy!5e0!3m2!1ses-419!2sni!4v1769934681165!5m2!1ses-419!2sni" width="600" height="450" class="map-iframe" allowfullscreen="" loading="lazy" title="Ubicación de V&P English Academy"></iframe>
       
-      <div style="position: absolute; bottom: 20px; right: 20px;">
-          <a href="https://maps.app.goo.gl/3" target="_blank" class="btn btn-gold" style="box-shadow: 0 4px 15px rgba(0,0,0,0.3);">
+      <div class="map-btn-absolute">
+          <a href="https://maps.app.goo.gl/3" target="_blank" rel="noopener" class="btn btn-gold map-btn-shadow">
               <i class="fas fa-map-marked-alt"></i> Ver Ubicación Exacta
           </a>
       </div>
@@ -851,10 +905,10 @@
       <div class="footer-col">
         <h4>V&P English Academy</h4>
         <p>Tu puerta al mundo del inglés. Formando líderes bilingües con excelencia y pasión en Rivas.</p>
-        <div class="social-icons" style="margin-top: 20px;">
-          <a href="https://www.facebook.com/vpenacademy"><i class="fab fa-facebook-f"></i></a>
-          <a href="https://www.instagram.com/vpenacademy"><i class="fab fa-instagram"></i></a>
-          <a href="https://www.tiktok.com/@vpenacademy"><i class="fab fa-tiktok"></i></a>
+        <div class="social-icons social-icons-margin-top">
+          <a href="https://www.facebook.com/vpenacademy" title="Facebook V&P English Academy"><i class="fab fa-facebook-f"></i></a>
+          <a href="https://www.instagram.com/vpenacademy" title="Instagram V&P English Academy"><i class="fab fa-instagram"></i></a>
+          <a href="https://www.tiktok.com/@vpenacademy" title="TikTok V&P English Academy"><i class="fab fa-tiktok"></i></a>
         </div>
       </div>
       
@@ -882,11 +936,12 @@
       });
     });
 
-    // Función para enviar pre-matrícula al WhatsApp (CORREGIDA)
+    // Función ACTUALIZADA con Email
     function enviarAlWhatsapp(e) {
       e.preventDefault();
 
       var nombre = document.getElementById('nombre').value;
+      var email = document.getElementById('email').value; // <--- Nuevo dato capturado
       var edad = document.getElementById('edad').value;
       var telefono = document.getElementById('telefono').value;
       var modalidad = document.getElementById('modalidad').value;
@@ -894,16 +949,16 @@
       
       var telefonoAcademia = "50578642792"; 
 
-      // Mensaje estructurado con saltos de línea \n
+      // Agregamos el correo al mensaje con un icono de sobre 📧
       var texto = "👋 Hola V&P, quiero realizar mi PRE-MATRÍCULA.\n\n" +
                   "👤 Nombre: " + nombre + "\n" +
+                  "📧 Correo: " + email + "\n" +  // <--- Se agrega aquí al mensaje
                   "🎂 Edad: " + edad + " años\n" +
                   "📱 Teléfono: " + telefono + "\n" +
                   "🎓 Modalidad: " + modalidad + "\n" +
                   "📊 Nivel estimado: " + nivel + "\n\n" +
                   "Espero su confirmación.";
 
-      // encodeURIComponent es CLAVE para que no se corte el mensaje en el símbolo '&'
       var mensajeCodificado = encodeURIComponent(texto);
 
       var url = "https://api.whatsapp.com/send?phone=" + telefonoAcademia + "&text=" + mensajeCodificado;
@@ -913,4 +968,3 @@
 
 </body>
 </html>
-
