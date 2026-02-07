@@ -924,9 +924,9 @@
     </div>
   </footer>
 
-  <script>
+   <script>
     function toggleMenu() {
-      var menu = document.getElementById("navMenu");
+     var menu = document.getElementById("navMenu");
       menu.classList.toggle("active");
     }
 
@@ -936,23 +936,45 @@
       });
     });
 
-    // Función ACTUALIZADA con Email
+    // --- FUNCIÓN MEJORADA: SHEETS + WHATSAPP ---
     function enviarAlWhatsapp(e) {
-      e.preventDefault();
+      e.preventDefault(); // Evita que la página se recargue
 
+      // 1. Capturamos los datos del formulario
       var nombre = document.getElementById('nombre').value;
-      var email = document.getElementById('email').value; // <--- Nuevo dato capturado
+      var email = document.getElementById('email').value;
       var edad = document.getElementById('edad').value;
       var telefono = document.getElementById('telefono').value;
       var modalidad = document.getElementById('modalidad').value;
       var nivel = document.getElementById('nivel').value;
       
-      var telefonoAcademia = "50578642792"; 
+      // Botón de envío para dar feedback visual (opcional)
+      var boton = document.querySelector('button[type="submit"]');
+      var textoOriginal = boton.innerHTML;
+      boton.innerHTML = "Procesando...";
+      boton.disabled = true;
 
-      // Agregamos el correo al mensaje con un icono de sobre 📧
+      // 2. Enviamos los datos a GOOGLE SHEETS (en segundo plano)
+      // ¡IMPORTANTE! PEGA TU URL DE APPS SCRIPT AQUÍ ABAJO ENTRE LAS COMILLAS:
+      var scriptURL = "https://script.google.com/macros/s/AKfycbxgYljFkeQNCKy7e134lJmkHmq-21E3h_py1qjA6hf9r5aAPXVrQxpwypfNseDptC_tXw/exec"; 
+
+      var formData = new FormData();
+      formData.append("nombre", nombre);
+      formData.append("email", email);
+      formData.append("edad", edad);
+      formData.append("telefono", telefono);
+      formData.append("modalidad", modalidad);
+      formData.append("nivel", nivel);
+
+      fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => console.log('Guardado en Excel correctamente'))
+        .catch(error => console.error('Error al guardar en Excel', error));
+
+      // 3. Abrimos WHATSAPP (Como lo hacías antes)
+      var telefonoAcademia = "50578642792"; 
       var texto = "👋 Hola V&P, quiero realizar mi PRE-MATRÍCULA.\n\n" +
                   "👤 Nombre: " + nombre + "\n" +
-                  "📧 Correo: " + email + "\n" +  // <--- Se agrega aquí al mensaje
+                  "📧 Correo: " + email + "\n" +
                   "🎂 Edad: " + edad + " años\n" +
                   "📱 Teléfono: " + telefono + "\n" +
                   "🎓 Modalidad: " + modalidad + "\n" +
@@ -960,11 +982,19 @@
                   "Espero su confirmación.";
 
       var mensajeCodificado = encodeURIComponent(texto);
-
       var url = "https://api.whatsapp.com/send?phone=" + telefonoAcademia + "&text=" + mensajeCodificado;
-      window.open(url, '_blank');
+      
+      // Pequeña pausa para asegurar que el proceso de guardado inició antes de cambiar de ventana
+      setTimeout(function() {
+          window.open(url, '_blank');
+          boton.innerHTML = textoOriginal; // Restaurar botón
+          boton.disabled = false;
+          // Opcional: Limpiar formulario
+          // document.getElementById("enrollmentForm").reset(); 
+      }, 1000); 
     }
   </script>
 
 </body>
 </html>
+
