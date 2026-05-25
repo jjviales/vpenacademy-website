@@ -544,76 +544,20 @@
     }
 
     /* --- ESTILOS FORMULARIO PRE-MATRÍCULA --- */
-    .enrollment-section {
-      background: linear-gradient(rgba(10, 31, 68, 0.95), rgba(10, 31, 68, 0.9));
-      background-size: cover;
-      background-position: center;
-      padding: 80px 20px;
-      display: flex;
-      justify-content: center;
-    }
-
-    .enrollment-container {
-      background: rgba(255, 255, 255, 0.05);
-      -webkit-backdrop-filter: blur(10px);
-      backdrop-filter: blur(10px);
-      padding: 40px;
-      border-radius: 20px;
-      border: 1px solid rgba(249, 201, 78, 0.3);
-      max-width: 600px;
-      width: 100%;
-      box-shadow: 0 15px 35px rgba(0,0,0,0.3);
-    }
-
+      .enrollment-section { background: linear-gradient(rgba(10, 31, 68, 0.95), rgba(10, 31, 68, 0.9)); background-size: cover; background-position: center; padding: 80px 20px; display: flex; justify-content: center; }
+    .enrollment-container { background: rgba(255, 255, 255, 0.05); -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px); padding: 40px; border-radius: 20px; border: 1px solid rgba(249, 201, 78, 0.3); max-width: 600px; width: 100%; box-shadow: 0 15px 35px rgba(0,0,0,0.3); }
     .enrollment-header { text-align: center; margin-bottom: 30px; }
-
-    .enrollment-form label {
-      display: block;
-      color: var(--gold-main);
-      margin-bottom: 8px;
-      font-weight: 600;
-      font-size: 0.9rem;
-    }
-
-    .enrollment-form input, 
-    .enrollment-form select {
-      width: 100%;
-      padding: 12px 15px;
-      background: rgba(255, 255, 255, 0.1);
-      border: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 8px;
-      color: white;
-      font-size: 1rem;
-      outline: none;
-      transition: border 0.3s;
-    }
-
-    .enrollment-form input:focus, 
-    .enrollment-form select:focus {
-      border-color: var(--gold-main);
-      background: rgba(255, 255, 255, 0.15);
-    }
-
-    .enrollment-form select option {
-      background: var(--navy-dark);
-      color: white;
-    }
-
+    .urgency-badge { display: inline-block; background-color: #e74c3c; color: white; padding: 5px 15px; border-radius: 20px; font-size: 0.85rem; font-weight: bold; margin-bottom: 15px; animation: pulse 2s infinite; }
+    @keyframes pulse { 0% { transform: scale(1); } 50% { transform: scale(1.05); } 100% { transform: scale(1); } }
+    .enrollment-form label { display: block; color: var(--gold-main); margin-bottom: 8px; font-weight: 600; font-size: 0.9rem; }
+    .enrollment-form input, .enrollment-form select { width: 100%; padding: 12px 15px; background: rgba(255, 255, 255, 0.1); border: 1px solid rgba(255, 255, 255, 0.2); border-radius: 8px; color: white; font-size: 1rem; outline: none; transition: border 0.3s; }
+    .enrollment-form input:focus, .enrollment-form select:focus { border-color: var(--gold-main); background: rgba(255, 255, 255, 0.15); }
+    .enrollment-form select option { background: var(--navy-dark); color: white; }
     .form-group { margin-bottom: 20px; }
-
-    .form-row {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 20px;
-    }
-
-    .btn-block {
-      width: 100%;
-      padding: 15px;
-      font-size: 1.1rem;
-      text-transform: uppercase;
-      margin-top: 10px;
-    }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .btn-block { width: 100%; padding: 15px; font-size: 1.1rem; text-transform: uppercase; margin-top: 10px; }
+    .prematricula-title { color: var(--gold-main); display: block; }
+    .enrollment-description { color: #ccc; }
 
     /* --- CONTACTO Y MAPA --- */
     .contact-section {
@@ -1018,6 +962,7 @@
   <section id="prematricula" class="enrollment-section">
     <div class="enrollment-container">
       <div class="enrollment-header">
+        <span class="urgency-badge">⚠️ Últimos cupos disponibles este mes</span>
         <h2 class="section-title prematricula-title">Pre-Matrícula Online</h2>
         <p class="enrollment-description">Completa tus datos para reservar tu cupo y te contactaremos para confirmar.</p>
       </div>
@@ -1057,6 +1002,7 @@
               <option value="Regular Nocturno">Curso Regular Nocturno (Presencial)</option>
               <option value="Virtual">Lunes y Viernes (Virtual)</option>
               <option value="Privado">Clases Privadas</option>
+              <option value="Corporativo B2B">Capacitación Corporativa (Empresas)</option>
             </select>
           </div>
         </div>
