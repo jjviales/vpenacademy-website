@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog | V&P English Academy</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy-dark: #0a1f44;
+      --navy-light: #162f5e;
+      --gold-main: #f9c94e;
+      --gold-hover: #e0b135;
+      --white: #ffffff;
+      --gray-light: #f4f7f6;
+    }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: var(--gray-light);
+      color: #333;
+    }
+    /* Cabecera simplificada */
+    header {
+      background-color: var(--navy-dark);
+      padding: 20px;
+      text-align: center;
+    }
+    header a {
+      color: var(--white);
+      text-decoration: none;
+      font-weight: 600;
+      margin: 0 15px;
+      font-size: 1.1rem;
+    }
+    header a:hover { color: var(--gold-main); }
+    
+    /* Contenedor del Blog */
+    .blog-header {
+      text-align: center;
+      padding: 40px 20px;
+      background-color: var(--navy-light);
+      color: var(--white);
+    }
+    .blog-header h1 { margin: 0; font-size: 2.5rem; color: var(--gold-main); }
+    
+    .blog-grid {
+      max-width: 1100px;
+      margin: 50px auto;
+      padding: 0 20px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 30px;
+    }
+    
+    /* Tarjetas de Artículo */
+    .card {
+      background: var(--white);
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+    }
+    .card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+    }
+    .card-content {
+      padding: 25px;
+    }
+    .tag {
+      background-color: var(--navy-light);
+      color: var(--white);
+      font-size: 0.8rem;
+      padding: 5px 10px;
+      border-radius: 20px;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+    .card-title {
+      font-size: 1.3rem;
+      color: var(--navy-dark);
+      font-weight: 700;
+      margin: 15px 0 10px;
+    }
+    .card-resume {
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #666;
+      margin-bottom: 20px;
+    }
+    .btn-read {
+      display: inline-block;
+      background-color: var(--gold-main);
+      color: var(--navy-dark);
+      padding: 10px 20px;
+      border-radius: 6px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: background 0.3s;
+    }
+    .btn-read:hover { background-color: var(--gold-hover); }
+  </style>
+</head>
+<body>
+
+  <header>
+    <a href="index.html">← Volver a la Academia</a>
+  </header>
+
+  <div class="blog-header">
+    <h1>Blog V&P English Academy</h1>
+    <p>Recursos, tips y guías para dominar el inglés y potenciar tu carrera profesional.</p>
+  </div>
+
+  <div class="blog-grid">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1516321497487-e288fb19713f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Entrevista Call Center">
+      <div class="card-content">
+        <span class="tag">Empleo</span>
+        <h2 class="card-title">Las 10 frases clave para pasar tu entrevista en un Call Center</h2>
+        <p class="card-resume">Descubre las estructuras en inglés que los reclutadores en Nicaragua quieren escuchar para contratarte de inmediato.</p>
+        <a href="articulo.html" class="btn-read">Leer Artículo completo</a>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Inglés Corporativo">
+      <div class="card-content">
+        <span class="tag">Negocios</span>
+        <h2 class="card-title">Por qué tu empresa pierde dinero si tu equipo no habla inglés</h2>
+        <p class="card-resume">Analizamos cómo la falta de bilingüismo estanca las oportunidades de negocios internacionales y cómo el plan Executive Pro lo soluciona.</p>
+        <a href="articulo.html" class="btn-read">Leer Artículo completo</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
