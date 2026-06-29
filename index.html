@@ -1176,11 +1176,18 @@
     document.body.removeChild(link);
 
     // Restaurar el botón por si el usuario regresa al navegador
-    setTimeout(function() {
+ setTimeout(() => {
+        var link = document.createElement('a');
+        link.href = url;
+        document.body.appendChild(link);
+        link.click();
+        document.body.removeChild(link);
+
+        // Restaurar el botón
         boton.innerHTML = textoOriginal; 
         boton.disabled = false;
-    }, 1000);
-}
+      }, 1500);
+    }
   </script>
 
 </body>
