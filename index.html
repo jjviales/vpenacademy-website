@@ -1109,7 +1109,7 @@
     <i class="fab fa-whatsapp"></i>
   </a>
 
-   <script>
+<script>
     function toggleMenu() {
      var menu = document.getElementById("navMenu");
       menu.classList.toggle("active");
@@ -1136,7 +1136,7 @@
     boton.innerHTML = "Redirigiendo...";
     boton.disabled = true;
 
-    // TU URL DE APPS SCRIPT
+    // URL CORRECTA Y ACTUALIZADA
     var scriptURL = "https://script.google.com/macros/s/AKfycbw4pJiBj15SKNv3BdG7Y5VILWbzCNDH3vHrQruGJMHJl04Lxgg9YdypbzZXaDzZoS3q/exec"; 
 
     var formData = new FormData();
@@ -1147,10 +1147,10 @@
     formData.append("modalidad", modalidad);
     formData.append("nivel", nivel);
 
-    // 1. Enviar a Google Sheets con 'keepalive: true' (Crucial para iOS)
-    fetch(scriptURL, { method: 'POST', body: formData, keepalive: true })
-      .then(response => console.log('Guardado en Excel correctamente'))
-      .catch(error => console.error('Error al guardar en Excel', error));
+    // 1. Enviar a Google Sheets con 'mode: no-cors' AGREGADO
+    fetch(scriptURL, { method: 'POST', mode: 'no-cors', body: formData, keepalive: true })
+      .then(response => console.log('Petición enviada a Apps Script'))
+      .catch(error => console.error('Error en la petición', error));
 
     // 2. Preparar el mensaje hacia V&P English Academy
     var telefonoAcademia = "50578642792"; 
@@ -1164,9 +1164,8 @@
                 "Espero su confirmación.";
 
     var mensajeCodificado = encodeURIComponent(texto);
-    var url = "https://wa.me/" + telefonoAcademia + "?text=" + mensajeCodificado;
     
-    // Enlace universal oficial (Mejor compatibilidad iOS/Android)
+    // VARIABLE DUPLICADA ELIMINADA
     var url = "https://wa.me/" + telefonoAcademia + "?text=" + mensajeCodificado;
     
     // 3. Redirección INMEDIATA simulando un tap en un enlace (Bypass para Safari)
